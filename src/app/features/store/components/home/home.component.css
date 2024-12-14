@@ -1,0 +1,271 @@
+/* Estilos del banner */
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    
+  }
+  
+  .image-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+  }
+  
+  .image-container img {
+    flex: 1;
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  .banner-text {
+    position: absolute;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Estilos de la sección de productos */
+  .products-section {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .products-section h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    
+  }
+  
+  .product-card {
+    background-color: white;
+    border: 1.5px solid #07786A;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    position: relative;
+    margin: 10%;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .product-card .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #83c5be;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .product-card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .product-card p {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .product-card button {
+    background-color: white;
+    border: 1px solid #75C7A9;
+    color: #07786A;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .product-card button:hover {
+    background-color: #66a99c;
+  }
+  
+  /* Estilos de la sección promocional */
+  .promo-section {
+    background-color: #68C4B8;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .promo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    background-color: #68C4B8;
+    border-radius: 10px;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  .promo-text {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .promo-text h1 {
+    font-size: 36px;
+    color: white;
+  }
+  
+  .promo-text h3 {
+    font-size: 24px;
+    color: #FFFFFFB3;
+  }
+  
+  .promo-text p {
+    font-size: 16px;
+    color: #FFFFFFB3;
+    margin: 20px 0;
+  }
+  
+  .promo-text button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .promo-text button:hover {
+    background-color: white;
+    color: #68C4B8;
+  }
+  
+  .promo-price {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .promo-price span {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .promo-price small {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .title-and-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .title-and-buttons h2 {
+    font-size: 24px;
+    color: #506e67; /* Ajusta el color para que coincida con el diseño */
+    margin: 0;
+  }
+  
+  .category-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .category-button {
+    background-color: #e8f0f1;
+    color: #2D9393;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .category-button:hover {
+    background-color: #b3d6d5;
+  }
+  
+  .category-button.active {
+    background-color: #4aa6a8; /* Color especial para el botón activo */
+    color: white;
+  }
+  
+  /* Estilo general para la sección de características */
+  .features-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 70px;
+  }
+  
+  /* Estilo para cada característica individual */
+  .feature {
+    text-align: center;
+    max-width: 200px;
+  }
+  
+  /* Estilo para el icono circular */
+  .feature-icon {
+    background-color: #75C7A9; /* Color de fondo */
+    color: white; /* Color del icono */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Hace el icono circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px; /* Centrado y espaciado inferior */
+    font-size: 24px;
+  }
+  
+  /* Estilo para el título de cada característica */
+  .feature h3 {
+    font-size: 18px;
+    color: #506e67; /* Ajusta el color */
+    margin: 10px 0 5px;
+  }
+  
+  /* Estilo para la descripción de cada característica */
+  .feature p {
+    font-size: 14px;
+    color: #8e9a9a; /* Ajusta el color para el texto de descripción */
+    margin: 0;
+  }
+  

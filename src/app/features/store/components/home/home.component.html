@@ -1,0 +1,82 @@
+
+<div class="banner">
+    <div class="image-container">
+        <img src="/home/men.jpg" alt="Outfit 1" width="500" height="600" />
+        <img src="/home/children.jpg" alt="Outfit 2" width="500" height="600" />
+        <img src="/home/women.jpg" alt="Outfit 3" width="500" height="600" />
+    </div>
+    <div class="banner-text">
+        <h1>CLOTHES</h1>
+        <p>Escoge tus prendas a tu estilo con la moda</p>
+    </div>
+</div>
+
+<aside class="order">
+    <div class="features-section">
+        <div class="feature">
+            <div class="feature-icon">
+                <i class="fas fa-shipping-fast"></i>
+            </div>
+            <h3>Free Shipping</h3>
+            <p>Free on order over $300</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Security Payment</h3>
+            <p>100% security payment</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">
+                <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>30 Day Return</h3>
+            <p>30 day money guarantee</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Support every time fast</p>
+        </div>
+    </div>
+
+</aside>
+
+<section class="products-section">
+    <div class="title-and-buttons">
+        <h2>Ropa de Lujo</h2>
+        <div class="category-buttons">
+            <button class="category-button active">All Products</button>
+            <button class="category-button">Vestidos</button>
+            <button class="category-button">Chompas</button>
+            <button class="category-button">Pantalones</button>
+            <button class="category-button">Más</button>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div *ngFor="let product of listProductsView" class="product-card">
+            <img [src]="product.image" [alt]="" style="width: 270px; height: 330px;">
+            <span class="tag">hola mundo</span>
+            <h2>${{ product.price}}</h2>
+            <h3>Nombre</h3>
+            <p>{{ product.title | truncate:4 }}</p>
+            <button>Seleccionar opciones</button>
+        </div>
+    </div>
+</section>
+
+<section class="promo-section">
+    <div class="promo-container">
+        <div class="promo-text">
+            <h1>Fresh Exotic Fruits</h1>
+            <h3>in Our Store</h3>
+            <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
+                non-characteristic words etc.</p>
+            <button>BUY</button>
+        </div>
+    </div>
+</section>
