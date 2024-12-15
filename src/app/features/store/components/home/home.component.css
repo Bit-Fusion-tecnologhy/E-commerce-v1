@@ -60,6 +60,7 @@
     transition: transform 0.3s;
     position: relative;
     margin: 10%;
+    
   }
   
   .product-card:hover {
@@ -67,8 +68,9 @@
   }
   
   .product-card img {
-    width: 100%;
+    width: 50%;
     border-radius: 10px;
+    object-fit: contain;
   }
   
   .product-card .tag {
@@ -95,14 +97,16 @@
     background-color: white;
     border: 1px solid #75C7A9;
     color: #07786A;
-    padding: 10px 20px;
-    border-radius: 30px;
+    text-align: center;
+    border-radius: 80px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-bottom: 15px;
   }
   
   .product-card button:hover {
     background-color: #66a99c;
+    color: white;
   }
   
   /* Estilos de la sección promocional */
@@ -207,9 +211,10 @@
   }
   
   .category-button {
-    background-color: #e8f0f1;
-    color: #2D9393;
-    padding: 8px 16px;
+    background-color: #F4F6F8;
+    color: #45595B;
+    width: 130px;
+    height: 30px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
