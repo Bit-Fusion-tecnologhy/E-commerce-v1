@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --slate-gray: #45595B;
+  --cool-gray: #747D88;
+  --teal-green: #07786A;
+  --mint-green: #75C7A9;
+  --light-aquamarine: #A5F5E2;
+  --whisper-gray: #F4F6F8;
+  --light-gray: #DEE2E6; 
+}
+
+.bg-teal-grenn {
+  background-color: var(--teal-green);
+}
+
+.bg-mint-green {
+  background-color: var(--mint-green);
+}
+
+.bg-light-aquamarine {
+  background-color: var(--light-aquamarine);
+}
+
+.bg-whisper-gray {
+  background-color: var(--whisper-gray);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.text-slate-gray {
+  color: var(--slate-gray);
+}
+
+.text-cool-gray {
+  color: var(--cool-gray);
+}
+
+.text-teal-green{
+  color: var(--teal-green);
+}

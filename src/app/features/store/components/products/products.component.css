@@ -1,0 +1,58 @@
+.btn-categories{
+  width: 120px;
+  height: 45px;
+}
+
+.custom-range::-webkit-slider-thumb {
+  background-color: var(--teal-green) 
+}
+
+.custom-range::-moz-range-thumb {
+  background-color: var(--teal-green) 
+}
+
+.custom-range::-ms-thumb {
+  background-color: var(--teal-green) 
+}
+
+.btn-options{
+  border: 1px solid var(--teal-green);
+  width: 80%;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+}
+
+.card{
+  border: 1px solid var(--teal-green);
+}
+
+.price{
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.product-title{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-img-top{
+  height: 350px; 
+  width: auto; 
+  object-fit: contain
+}
+
+.custom-pagination ::ng-deep .ngx-pagination .current {
+  background: var(--slate-gray);
+  border-radius: 5px;  
+
+}
+.custom-pagination ::ng-deep .ngx-pagination li{
+  border: 1px solid var(--slate-gray);
+  border-radius: 5px;  
+  margin-left: 5px;
+}
+
+
+
