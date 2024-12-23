@@ -1,6 +1,16 @@
 .btn-categories{
   width: 120px;
-  height: 45px;
+  height: 40px;
+}
+
+.btn-categories:hover{
+  border: 1px solid var(--slate-gray);
+  background-color: white;
+}
+
+button.active{
+  background-color: var(--whisper-gray);
+  color: var(--slate-gray);
 }
 
 .custom-range::-webkit-slider-thumb {

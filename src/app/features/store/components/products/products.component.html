@@ -1,7 +1,21 @@
 <div class="container-fluid my-5 px-5" >  
   <div class="d-flex justify-content-end mb-4">
-    <button class="btn text-slate-gray bg-whisper-gray btn-categories me-3">Mujer</button>
-    <button class="btn text-cool-gray bg-whisper-gray btn-categories me-3">Hombre</button>
+    <button 
+      class="btn text-slate-gray bg-whisper-gray btn-categories me-3"
+      [class.active]="selectedCategory === 'all'"
+      (click)="filterProducts('all')">
+      Todos
+    </button>
+    <button class="btn text-slate-gray bg-whisper-gray btn-categories me-3"
+      [class.active]="selectedCategory === 'women\'s clothing'"
+      (click)="filterProducts('women\'s clothing')">
+      Mujer
+    </button>
+    <button class="btn text-slate-gray bg-whisper-gray btn-categories me-4"
+      [class.active]="selectedCategory === 'men\'s clothing'"
+      (click)="filterProducts('men\'s clothing')">
+      Hombre
+    </button>
   </div>
   <div class="row mb-4 pe-2">
     <div class="col-12 col-md-3 ">
@@ -45,15 +59,16 @@
             </div>
         </div>
       </div>
-      <p class="mb-1 text-slate-gray">0</p>
       <h5 class="text-slate-gray">Precio</h5>
-      <input type="range" class="form-range custom-range pe-4" min="0" max="500" value="0" />
+      <p class="mb-1 text-slate-gray">{{maxPrice}}</p>
+      <input type="range" class="form-range custom-range pe-4" min="0" max="150" [value]="maxPrice"
+        (input)="productsByPrice($event)" />
     </div>
 
     <div class="col-12 col-md-9">
       <div class="row g-4">
         <div
-          *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: currentPage }"
+          *ngFor="let product of filteredProducts | paginate: { itemsPerPage: 9, currentPage: currentPage }"
           class="col-12 col-sm-6 col-lg-4 mb-4"
         >
           <div class="card h-100 mx-3">
@@ -73,9 +88,7 @@
             </div>
           </div>
         </div>
-      </div>
-      
-      
+      </div>      
     </div>
     <div class=" col-12 d-flex justify-content-center mt-5 pt-4">
       <pagination-controls
