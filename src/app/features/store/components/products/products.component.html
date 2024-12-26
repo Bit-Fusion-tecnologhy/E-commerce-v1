@@ -1,0 +1,105 @@
+<div class="container-fluid my-5 px-5" >  
+  <div class="d-flex justify-content-end mb-4">
+    <button 
+      class="btn text-slate-gray bg-whisper-gray btn-categories me-3"
+      [class.active]="selectedCategory === 'all'"
+      (click)="filterProducts('all')">
+      Todos
+    </button>
+    <button class="btn text-slate-gray bg-whisper-gray btn-categories me-3"
+      [class.active]="selectedCategory === 'women\'s clothing'"
+      (click)="filterProducts('women\'s clothing')">
+      Mujer
+    </button>
+    <button class="btn text-slate-gray bg-whisper-gray btn-categories me-4"
+      [class.active]="selectedCategory === 'men\'s clothing'"
+      (click)="filterProducts('men\'s clothing')">
+      Hombre
+    </button>
+  </div>
+  <div class="row mb-4 pe-2">
+    <div class="col-12 col-md-3 ">
+      <h5 class="text-slate-gray">Categorías</h5>
+      <div class="container ps-0">
+        <button class="btn me-2" type="button">
+          <h6 class="text-slate-gray">Mujer</h6>
+        </button>
+        <div>
+            <div class="form-check ms-3">
+              <input class="form-check-input" type="checkbox" id="check1">
+              <label class="form-check-label text-slate-gray" for="check1"> Vestidos </label>
+            </div>
+            <div class="form-check ms-3">
+              <input class="form-check-input" type="checkbox" id="check2">
+              <label class="form-check-label text-slate-gray" for="check2"> Vestidos </label>
+            </div>
+            <div class="form-check ms-3">
+              <input class="form-check-input" type="checkbox" id="check3">
+              <label class="form-check-label text-slate-gray" for="check3"> Vestidos </label>
+            </div>
+        </div>        
+      </div>
+      
+      <div class="container ps-0">
+        <button class="btn" type="button" >
+          <h6 class="text-slate-gray">Hombre</h6>
+        </button>
+        <div class="mb-5">
+            <div class="form-check ms-3">
+              <input class="form-check-input" type="checkbox" id="check4">
+              <label class="form-check-label text-slate-gray" for="check4"> Camisas </label>
+            </div>
+            <div class="form-check ms-3">
+              <input class="form-check-input" type="checkbox" id="check5">
+              <label class="form-check-label text-slate-gray" for="check5"> Camisas </label>
+            </div>
+            <div class="form-check ms-3 mb-3">
+              <input class="form-check-input" type="checkbox" id="check6">
+              <label class="form-check-label text-slate-gray" for="check6"> Camisas </label>
+            </div>
+        </div>
+      </div>
+      <h5 class="text-slate-gray">Precio</h5>
+      <p class="mb-1 text-slate-gray">{{maxPrice}}</p>
+      <input type="range" class="form-range custom-range pe-4" min="0" max="150" [value]="maxPrice"
+        (input)="productsByPrice($event)" />
+    </div>
+
+    <div class="col-12 col-md-9">
+      <div class="row g-4">
+        <div
+          *ngFor="let product of filteredProducts | paginate: { itemsPerPage: 9, currentPage: currentPage }"
+          class="col-12 col-sm-6 col-lg-4 mb-4"
+        >
+          <div class="card h-100 mx-3">
+            <img
+              [src]="product.image"
+              class="card-img-top p-2"
+              alt="{{ product.title }}"
+              
+            />
+            <div class="card-body d-flex flex-column text-center">
+              <p class="mb-2 text-slate-gray price">${{ product.price }}</p>
+              <p class="product-title text-slate-gray">{{ product.title }}</p>
+              <p class="text-slate-gray">Lorem ipsum dolor sit amet</p>
+              <button class="btn btn-options text-teal-green ms-auto me-auto mt-auto">
+                Seleccionar opciones
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </div>
+    <div class=" col-12 d-flex justify-content-center mt-5 pt-4">
+      <pagination-controls
+      class="custom-pagination"
+        (pageChange)="onPageChange($event)"
+        [maxSize]="5"          
+        [directionLinks]="true"  
+        [autoHide]="true"
+        previousLabel=""
+        nextLabel=""
+      ></pagination-controls>
+    </div>
+  </div>
+</div>
