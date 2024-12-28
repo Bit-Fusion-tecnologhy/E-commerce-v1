@@ -1,0 +1,130 @@
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  max-width: 1200px;
+  font-family: Arial, sans-serif;
+}
+
+.breadcrumb {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.product-images, .product-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.thumbnail {
+  width: 50px;
+  max-width: 50px;
+  height: 50px;
+  max-height: 50px;
+  margin-bottom: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+.add-to-cart, .whatsapp {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add-to-cart:hover, .whatsapp:hover {
+  background-color: #218838;
+}
+
+.card {
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.price {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.btn-options {
+  color: rgb(0, 0, 0);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border-color: #218838;
+  font-size: 0.875rem;
+}
+
+
+.btn-options:hover {
+  background-color: #218838;
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.col-12, .col-sm-6, .col-lg-3 {
+  flex: 1 1 calc(25% - 16px); 
+  max-width: calc(25% - 16px);
+}
+
+@media (max-width: 768px) {
+  .col-sm-6, .col-lg-3 {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 576px) {
+  .col-sm-6, .col-lg-3 {
+    flex: 1 1 calc(100% - 16px);
+    max-width: calc(100% - 16px);
+  }
+}
