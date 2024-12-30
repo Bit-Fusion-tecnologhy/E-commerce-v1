@@ -1,11 +1,11 @@
 <div class="center">
   <div class="product-details" *ngIf="product">
-    <div class="breadcrumb">{{ product.category }}</div>
+    <div class="breadcrumb">Mujer / Ropa</div>
     <div class="product-container">
       <div class="product-images">
-        <div class="thumbnail" *ngFor="let img of images; let i = index" (click)="selectImage(i)">
-          <img [src]="img" alt="Producto">
-        </div>
+        <img *ngFor="let img of images; let i = index" [src]="img" alt="Producto" class="thumbnail" (click)="selectImage(i)">
+      </div>
+      <div class="main-image-container">
         <img [src]="images[selectedImageIndex]" class="main-image" alt="Producto principal">
       </div>
       <div class="product-info">
@@ -15,10 +15,10 @@
         <div class="product-colors">
           <label>Color</label>
           <div class="color-options">
-            <span class="color red" (click)="selectColor('red')"></span>
-            <span class="color black" (click)="selectColor('black')"></span>
-            <span class="color gray" (click)="selectColor('gray')"></span>
-            <span class="color purple" (click)="selectColor('purple')"></span>
+            <span class="color" style="background-color: red;" (click)="selectColor('red')"></span>
+            <span class="color" style="background-color: black;" (click)="selectColor('black')"></span>
+            <span class="color" style="background-color: gray;" (click)="selectColor('gray')"></span>
+            <span class="color" style="background-color: purple;" (click)="selectColor('purple')"></span>
           </div>
         </div>
         
@@ -41,14 +41,16 @@
           <button (click)="increaseQuantity()">+</button>
         </div>
         
-        <button class="add-to-cart">Añadir al carrito</button>
+        <button class="add-to-cart">Add to cart</button>
         <button class="whatsapp">Comprar por WhatsApp</button>
       </div>
     </div>
     
-    <div class="description">
+    <div class="tabs">
       <button [class.active]="activeTab === 'description'" (click)="showTab('description')">Descripción</button>
       <button [class.active]="activeTab === 'warranty'" (click)="showTab('warranty')">Garantía</button>
+    </div>
+    <div class="tab-content">
       <div *ngIf="activeTab === 'description'">
         <p>{{ product.description }}</p>
       </div>
@@ -56,32 +58,24 @@
         <p>Detalles sobre la garantía de este producto.</p>
       </div>
     </div>
-
-    <div class="container mt-5">
-      <h5 class="text-slate-gray mb-4">Productos Relacionados</h5>
-      <div class="row g-4">
-        <div
-          *ngFor="let relatedProduct of relatedProducts | slice:0:4"
-          class="col-12 col-sm-6 col-lg-3 mb-4"
-        >
-          <div class="card h-100 mx-3">
-            <img
-              [src]="relatedProduct.image"
-              class="card-img-top p-2"
-              alt="{{ relatedProduct.title }}"
-            />
-            <div class="card-body d-flex flex-column text-center">
-              <p class="mb-2 text-slate-gray price">${{ relatedProduct.price }}</p>
-              <p class="product-title text-slate-gray">{{ relatedProduct.title }}</p>
-              <button class="btn btn-options text-teal-green ms-auto me-auto mt-auto">
-                Ver Detalles
-              </button>
-            </div>
+    
+    <h3 class="related-title">Productos Relacionados</h3>
+    <div class="related-products-container">
+      <button class="carousel-btn prev">&lt;</button>
+      <div class="related-products">
+        <div class="related-product" *ngFor="let related of relatedProducts">
+          <div class="related-image">
+            <img [src]="related.image" alt="Producto relacionado">
+            <span class="tag">Dress</span>
           </div>
+          <p class="price">${{ related.price }}</p>
+          <p class="product-name">{{ related.title }}</p>
+          <p class="description">Lorem ipsum dolor sit amet</p>
+          <button class="select-btn">Opciones</button>
         </div>
       </div>
+      <button class="carousel-btn next">&gt;</button>
     </div>
-    
 
   </div>
 </div>
