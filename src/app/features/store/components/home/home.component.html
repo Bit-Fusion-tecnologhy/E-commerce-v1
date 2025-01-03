@@ -64,7 +64,7 @@
             <h2>${{ product.price}}</h2>
             <h3>Nombre</h3>
             <p>{{ product.title | truncate:4 }}</p>
-            <button>Seleccionar opciones</button>
+            <button (click)="navegar()" >Seleccionar opciones</button>
         </div>
     </div>
 </section>
