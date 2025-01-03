@@ -1,0 +1,81 @@
+<div class="center">
+  <div class="product-details" *ngIf="product">
+    <div class="breadcrumb">Mujer / Ropa</div>
+    <div class="product-container">
+      <div class="product-images">
+        <img *ngFor="let img of images; let i = index" [src]="img" alt="Producto" class="thumbnail" (click)="selectImage(i)">
+      </div>
+      <div class="main-image-container">
+        <img [src]="images[selectedImageIndex]" class="main-image" alt="Producto principal">
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">{{ product.title }}</h2>
+        <p class="product-price">${{ product.price }}</p>
+        
+        <div class="product-colors">
+          <label>Color</label>
+          <div class="color-options">
+            <span class="color" style="background-color: red;" (click)="selectColor('red')"></span>
+            <span class="color" style="background-color: black;" (click)="selectColor('black')"></span>
+            <span class="color" style="background-color: gray;" (click)="selectColor('gray')"></span>
+            <span class="color" style="background-color: purple;" (click)="selectColor('purple')"></span>
+          </div>
+        </div>
+        
+        <div class="product-sizes">
+          <label>Talla</label>
+          <div class="size-options">
+            <span 
+              class="size" 
+              *ngFor="let size of sizes" 
+              [class.selected]="size === selectedSize" 
+              (click)="selectSize(size)">
+              {{ size }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="quantity">
+          <button (click)="decreaseQuantity()">-</button>
+          <span>{{ quantity }}</span>
+          <button (click)="increaseQuantity()">+</button>
+        </div>
+        
+        <button class="add-to-cart">Add to cart</button>
+        <button class="whatsapp">Comprar por WhatsApp</button>
+      </div>
+    </div>
+    
+    <div class="tabs">
+      <button [class.active]="activeTab === 'description'" (click)="showTab('description')">Descripción</button>
+      <button [class.active]="activeTab === 'warranty'" (click)="showTab('warranty')">Garantía</button>
+    </div>
+    <div class="tab-content">
+      <div *ngIf="activeTab === 'description'">
+        <p>{{ product.description }}</p>
+      </div>
+      <div *ngIf="activeTab === 'warranty'">
+        <p>Detalles sobre la garantía de este producto.</p>
+      </div>
+    </div>
+    
+    <h3 class="related-title">Productos Relacionados</h3>
+    <div class="related-products-container">
+      <button class="carousel-btn prev">&lt;</button>
+      <div class="related-products">
+        <div class="related-product" *ngFor="let related of relatedProducts">
+          <div class="related-image">
+            <img [src]="related.image" alt="Producto relacionado">
+            <span class="tag">Dress</span>
+          </div>
+          <p class="price">${{ related.price }}</p>
+          <p class="product-name">{{ related.title }}</p>
+          <p class="description">Lorem ipsum dolor sit amet</p>
+          <button class="select-btn">Opciones</button>
+        </div>
+      </div>
+      <button class="carousel-btn next">&gt;</button>
+    </div>
+
+  </div>
+</div>
